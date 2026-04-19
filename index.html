@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plant-Message</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom, #e8f5e9, #ffffff);
+}
+
+.header {
+    background: #2e7d32;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.container {
+    padding: 20px;
+    text-align: center;
+}
+
+.main-card {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: -40px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.mensaje {
+    font-size: 20px;
+    color: #1b5e20;
+    margin: 15px 0;
+}
+
+.estado {
+    font-weight: bold;
+    color: #555;
+}
+
+.cards {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    padding: 15px;
+    width: 140px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    font-size: 14px;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+button {
+    border: none;
+    padding: 12px 18px;
+    margin: 5px;
+    border-radius: 12px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: #4caf50;
+    color: white;
+}
+
+.btn-secondary {
+    background: #a5d6a7;
+    color: #1b5e20;
+}
+
+.nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    box-shadow: 0 -5px 10px rgba(0,0,0,0.1);
+}
+
+.nav div {
+    font-size: 12px;
+    text-align: center;
+}
+</style>
+
+</head>
+<body>
+
+<div class="header">
+    <h2>🌱 Plant-Message</h2>
+    <p>La Planta Mensajera</p>
+</div>
+
+<div class="container">
+
+    <div class="main-card">
+        <p class="estado">💧 Tu plantita tiene sed...</p>
+
+        <div class="mensaje" id="mensaje">
+            Si yo necesito agua, tú también necesitas descanso.
+        </div>
+
+        <p>Tómate un momento para relajarte.</p>
+
+        <div class="buttons">
+            <button class="btn-primary" onclick="regar()">Regar mi planta</button>
+            <button class="btn-secondary" onclick="nuevoMensaje()">Nuevo mensaje</button>
+        </div>
+    </div>
+
+    <div class="cards">
+        <div class="card">
+            💧<br>
+            Riega 2 veces por semana
+        </div>
+
+        <div class="card">
+            🌿<br>
+            El autocuidado es importante
+        </div>
+
+        <div class="card">
+            📖<br>
+            Cuida de ti como de mí
+        </div>
+    </div>
+
+</div>
+
+<div class="nav">
+    <div>🏠<br>Inicio</div>
+    <div>💡<br>Tips</div>
+    <div>👤<br>Perfil</div>
+</div>
+
+<script>
+function nuevoMensaje() {
+    const mensajes = [
+        "Respira, todo va a estar bien 🌿",
+        "Un paso a la vez ✨",
+        "Cuidarme es cuidarte 💚",
+        "Hoy también estás creciendo 🌱"
+    ];
+
+    let random = Math.floor(Math.random() * mensajes.length);
+    document.getElementById("mensaje").innerText = mensajes[random];
+}
+
+function regar() {
+    document.getElementById("mensaje").innerText = "Gracias por cuidarme 🌱💧";
+}
+</script>
+
+</body>
+</html>
